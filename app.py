@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import text
+import webbrowser
 from datetime import datetime
 
 app = Flask(__name__)
@@ -94,4 +95,5 @@ def delete(id):
     return redirect(f'/?currency={selected_currency}')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    webbrowser.open_new("http://127.0.0.1:5000/")
+    app.run(debug=True,use_reloader=False)
